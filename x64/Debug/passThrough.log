@@ -1,0 +1,22 @@
+﻿  Building 'passThrough' with toolset 'WindowsKernelModeDriver10.0' and the 'Universal' target platform.
+  Stamping x64\Debug\passThrough.inf
+  Stamping [Version] section with DriverVer=08/21/2024,1.49.48.13
+  passThrough.vcxproj -> D:\source\minifilter2\x64\Debug\passThrough.sys
+  Done Adding Additional Store
+  Successfully signed: D:\source\minifilter2\x64\Debug\passThrough.sys
+  
+  Driver is 'Universal'.
+  .........................
+  Signability test complete.
+  
+  Errors:
+  None
+  
+  Warnings:
+  None
+  
+  Catalog generation complete.
+  D:\source\minifilter2\x64\Debug\passThrough\passthrough.cat
+  Done Adding Additional Store
+  Successfully signed: x64\Debug\passThrough\passthrough.cat
+  
