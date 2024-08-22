@@ -1,0 +1,23 @@
+﻿  Building 'WFLMinifilter' with toolset 'WindowsKernelModeDriver10.0' and the 'Universal' target platform.
+  Stamping x64\Debug\WFLMinifilter.inf
+  Stamping [Version] section with DriverVer=08/23/2024,0.31.41.577
+  WFLMinifilter.c
+  wflminifilter.vcxproj -> D:\source\windowsfilelocker\x64\Debug\wflminifilter.sys
+  Done Adding Additional Store
+  Successfully signed: D:\source\windowsfilelocker\x64\Debug\wflminifilter.sys
+  
+  Driver is 'Universal'.
+  ........................
+  Signability test complete.
+  
+  Errors:
+  None
+  
+  Warnings:
+  None
+  
+  Catalog generation complete.
+  D:\source\windowsfilelocker\x64\Debug\WFLMinifilter\wflminifilter.cat
+  Done Adding Additional Store
+  Successfully signed: x64\Debug\WFLMinifilter\wflminifilter.cat
+  
