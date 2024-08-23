@@ -1,6 +1,8 @@
 #include "wflminifilter.h"
+#include "port.h"
 
-PFLT_FILTER pFltHandle = NULL;
+PFLT_FILTER phFilter = NULL;
+PFLT_PORT pPort = NULL;
 
 
 // Minifilter unload function for minifilter
@@ -8,7 +10,7 @@ PFLT_FILTER pFltHandle = NULL;
 NTSTATUS MiniUnload(FLT_FILTER_UNLOAD_FLAGS Flags)
 {
 	KdPrint(("Driver unload called!!\r\n"));
-	FltUnregisterFilter(pFltHandle);
+	FltUnregisterFilter(phFilter);
 	return STATUS_SUCCESS;
 }
 
@@ -18,22 +20,28 @@ NTSTATUS DriverEntry(PDRIVER_OBJECT pDriverObj, PUNICODE_STRING RegistryPath)
 {
 	NTSTATUS status = STATUS_SUCCESS;
 
-	status = FltRegisterFilter(pDriverObj, &fltRegistration, &pFltHandle);
-
+	status = FltRegisterFilter(pDriverObj, &fltRegistration, &phFilter);
 	if (!NT_SUCCESS(status)) {
 		KdPrint(("FltRegisterFilter Failed!!"));
-		goto cleanup;
+		goto NO_FILTER_CLEANUP;
 	}
 
-
-	status = FltStartFiltering(pFltHandle);
+	// initialize the filter port
+	status = MinifltPortInitialize(phFilter);
 	if (!NT_SUCCESS(status)) {
-		FltUnregisterFilter(pFltHandle);
-		KdPrint(("FltUnregisterFilter Failed!!"));
-		goto cleanup;
+		KdPrint(("MinifltPortInitialize failed!!"));
+		goto FILTER_CLEANUP;
 	}
 
-cleanup:
+	status = FltStartFiltering(phFilter);
+
+FILTER_CLEANUP:
+	if (!NT_SUCCESS(status)) {
+		FltUnregisterFilter(phFilter);
+		KdPrint(("FltUnregisterFilter Failed!!"));
+	}
+
+NO_FILTER_CLEANUP:
 	return status;
 
 }
