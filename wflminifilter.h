@@ -2,6 +2,7 @@
 #include <fltKernel.h>
 #include <dontuse.h>
 #include <suppress.h>
+#include "defines.h"
 
 NTSTATUS MiniUnload(FLT_FILTER_UNLOAD_FLAGS Flags);
 

@@ -43,7 +43,7 @@ MinifltPortInitialize(
 		MinifltPortMessageRoutine,
 		1 // max connection
 	);
-	if (!NT_STATUS(status)) {
+	if (!NT_SUCCESS(status)) {
 		KdPrint(("FltCreateCommunicationPort failed!!"));
 		goto CLEANUP_PORT_INITIALIZE;
 	}

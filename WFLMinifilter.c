@@ -30,7 +30,7 @@ NTSTATUS DriverEntry(PDRIVER_OBJECT pDriverObj, PUNICODE_STRING RegistryPath)
 	status = MinifltPortInitialize(phFilter);
 	if (!NT_SUCCESS(status)) {
 		KdPrint(("MinifltPortInitialize failed!!"));
-		goto FILTER_CLEANUP;
+		//goto FILTER_CLEANUP;
 	}
 
 	status = FltStartFiltering(phFilter);

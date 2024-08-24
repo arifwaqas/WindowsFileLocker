@@ -1,8 +1,8 @@
 ﻿  Building 'WFLMinifilter' with toolset 'WindowsKernelModeDriver10.0' and the 'Universal' target platform.
   Stamping x64\Debug\wflminifilter.inf
-  Stamping [Version] section with DriverVer=08/23/2024,0.56.36.17
-  registrations.c
-  routines.c
+  Stamping [Version] section with DriverVer=08/24/2024,12.26.11.685
+  port.c
+D:\source\windowsfilelocker\port.c(30,35): warning C4133: 'function': incompatible types - from 'char [27]' to 'PCWSTR'
   wflminifilter.c
   Generating Code...
   wflminifilter.vcxproj -> D:\source\windowsfilelocker\x64\Debug\wflminifilter.sys

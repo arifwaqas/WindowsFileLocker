@@ -3,6 +3,22 @@
   "WorkspaceRootPath": "D:\\source\\windowsfilelocker\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{D8B8DA25-0E6D-4631-8B25-DBF5B10B45AD}|wflminifilter.vcxproj|D:\\source\\windowsfilelocker\\port.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{D8B8DA25-0E6D-4631-8B25-DBF5B10B45AD}|wflminifilter.vcxproj|solutionrelative:port.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D8B8DA25-0E6D-4631-8B25-DBF5B10B45AD}|wflminifilter.vcxproj|D:\\source\\windowsfilelocker\\port.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{D8B8DA25-0E6D-4631-8B25-DBF5B10B45AD}|wflminifilter.vcxproj|solutionrelative:port.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D8B8DA25-0E6D-4631-8B25-DBF5B10B45AD}|wflminifilter.vcxproj|D:\\source\\windowsfilelocker\\routines.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{D8B8DA25-0E6D-4631-8B25-DBF5B10B45AD}|wflminifilter.vcxproj|solutionrelative:routines.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D8B8DA25-0E6D-4631-8B25-DBF5B10B45AD}|wflminifilter.vcxproj|D:\\source\\windowsfilelocker\\wflminifilter.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{D8B8DA25-0E6D-4631-8B25-DBF5B10B45AD}|wflminifilter.vcxproj|solutionrelative:wflminifilter.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{D8B8DA25-0E6D-4631-8B25-DBF5B10B45AD}|wflminifilter.vcxproj|D:\\source\\windowsfilelocker\\wflminifilter.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{D8B8DA25-0E6D-4631-8B25-DBF5B10B45AD}|wflminifilter.vcxproj|solutionrelative:wflminifilter.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -11,12 +27,8 @@
       "RelativeMoniker": "D:0:0:{D8B8DA25-0E6D-4631-8B25-DBF5B10B45AD}|wflminifilter.vcxproj|solutionrelative:registrations.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D8B8DA25-0E6D-4631-8B25-DBF5B10B45AD}|wflminifilter.vcxproj|D:\\source\\windowsfilelocker\\wflminifilter.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{D8B8DA25-0E6D-4631-8B25-DBF5B10B45AD}|wflminifilter.vcxproj|solutionrelative:wflminifilter.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D8B8DA25-0E6D-4631-8B25-DBF5B10B45AD}|wflminifilter.vcxproj|D:\\source\\windowsfilelocker\\routines.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{D8B8DA25-0E6D-4631-8B25-DBF5B10B45AD}|wflminifilter.vcxproj|solutionrelative:routines.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{D8B8DA25-0E6D-4631-8B25-DBF5B10B45AD}|wflminifilter.vcxproj|D:\\source\\windowsfilelocker\\defines.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{D8B8DA25-0E6D-4631-8B25-DBF5B10B45AD}|wflminifilter.vcxproj|solutionrelative:defines.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D8B8DA25-0E6D-4631-8B25-DBF5B10B45AD}|passThrough.vcxproj|D:\\source\\windowsfilelocker\\WFLMinifilter.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -38,7 +50,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,33 +58,72 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
+              "Title": "defines.h",
+              "DocumentMoniker": "D:\\source\\windowsfilelocker\\defines.h",
+              "RelativeDocumentMoniker": "defines.h",
+              "ToolTip": "D:\\source\\windowsfilelocker\\defines.h",
+              "RelativeToolTip": "defines.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-08-24T09:11:07.248Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "port.h",
+              "DocumentMoniker": "D:\\source\\windowsfilelocker\\port.h",
+              "RelativeDocumentMoniker": "port.h",
+              "ToolTip": "D:\\source\\windowsfilelocker\\port.h",
+              "RelativeToolTip": "port.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-08-23T18:47:01.116Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "port.c",
+              "DocumentMoniker": "D:\\source\\windowsfilelocker\\port.c",
+              "RelativeDocumentMoniker": "port.c",
+              "ToolTip": "D:\\source\\windowsfilelocker\\port.c",
+              "RelativeToolTip": "port.c",
+              "ViewState": "AQIAAFEAAAAAAAAAAAAAAGIAAAA9AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2024-08-23T18:46:49.822Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "routines.c",
               "DocumentMoniker": "D:\\source\\windowsfilelocker\\routines.c",
               "RelativeDocumentMoniker": "routines.c",
               "ToolTip": "D:\\source\\windowsfilelocker\\routines.c",
               "RelativeToolTip": "routines.c",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADMAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAJUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2024-08-22T21:53:39.951Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "wflminifilter.h",
               "DocumentMoniker": "D:\\source\\windowsfilelocker\\wflminifilter.h",
               "RelativeDocumentMoniker": "wflminifilter.h",
               "ToolTip": "D:\\source\\windowsfilelocker\\wflminifilter.h",
               "RelativeToolTip": "wflminifilter.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAzAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-08-22T21:48:09.335Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "registrations.c",
               "DocumentMoniker": "D:\\source\\windowsfilelocker\\registrations.c",
               "RelativeDocumentMoniker": "registrations.c",
@@ -85,20 +136,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "wflminifilter.c",
               "DocumentMoniker": "D:\\source\\windowsfilelocker\\wflminifilter.c",
               "RelativeDocumentMoniker": "wflminifilter.c",
               "ToolTip": "D:\\source\\windowsfilelocker\\wflminifilter.c",
               "RelativeToolTip": "wflminifilter.c",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAACQAAAAPAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2024-08-22T21:38:01.764Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "wflminifilter.inf",
               "DocumentMoniker": "D:\\source\\windowsfilelocker\\wflminifilter.inf",
               "RelativeDocumentMoniker": "wflminifilter.inf",
@@ -106,12 +157,11 @@
               "RelativeToolTip": "wflminifilter.inf",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002933|",
-              "WhenOpened": "2024-08-22T21:37:59.736Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-22T21:37:59.736Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "WFLMinifilter.inf",
               "DocumentMoniker": "D:\\source\\windowsfilelocker\\WFLMinifilter.inf",
               "RelativeDocumentMoniker": "WFLMinifilter.inf",
@@ -123,7 +173,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "WFLMinifilter.c",
               "DocumentMoniker": "D:\\source\\windowsfilelocker\\WFLMinifilter.c",
               "RelativeDocumentMoniker": "WFLMinifilter.c",
