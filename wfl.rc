@@ -4,7 +4,7 @@
 
 #define VER_FILETYPE    VFT_DRV
 #define VER_FILESUBTYPE VFT2_DRV_SYSTEM
-#define VER_FILEDESCRIPTION_STR     "PassThrough Filter Driver"
-#define VER_INTERNALNAME_STR        "passThrough.sys"
+#define VER_FILEDESCRIPTION_STR     "wfl Filter Driver"
+#define VER_INTERNALNAME_STR        "wfl.sys"
 
 #include "common.ver"

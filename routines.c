@@ -1,82 +1,59 @@
-#include "wflminifilter.h"
+#include "wfl.h"
 
 #define MAX_PATH 1024
 
 // Routine helpers
 static NTSTATUS GetParsedFileNameInfo(
 	PFLT_CALLBACK_DATA pData,
-	PFLT_FILE_NAME_INFORMATION pFileNameInfo
+	WCHAR* parentDir
 )
 {
 	NTSTATUS status = STATUS_SUCCESS;
-
-	status = FltGetFileNameInformation(pData, FLT_FILE_NAME_NORMALIZED | FLT_FILE_NAME_QUERY_DEFAULT, &pFileNameInfo);
-	if (!NT_SUCCESS(status))
-	{
-		KdPrint(("MiniPreCreate Failed!!\r\n"));
-		goto FAIL;
-	}
-
-	status = FltParseFileNameInformation(pFileNameInfo);
-	if (!NT_SUCCESS(status))
-	{
-		KdPrint(("FltParseFileNameInformation Failed!!\r\n"));
-		goto FAIL;
-	}
-
-	goto OK;
-
-FAIL:
-	if (pFileNameInfo != NULL) {
-		FltReleaseFileNameInformation(pFileNameInfo);
-	}
-OK:
-	return status;
-}
-
-BOOL GetAccessVerdict(
-	PFLT_CALLBACK_DATA pData
-) 
-{
+	WCHAR dir[MAX_PATH] = { 0 };
 	PFLT_FILE_NAME_INFORMATION pFileNameInfo = NULL;
 
-	KdPrint(("Preop callback success!!"));
-
-	NTSTATUS status = GetParsedFileNameInfo(pData, pFileNameInfo);
-
-	if (!NT_SUCCESS(status) || pFileNameInfo == NULL) {
-		KdPrint(("GetParsedFileNameInfo failed or pFileInfo NULL!!"));
-		goto FAIL;
-	}
-
-	WCHAR dir[MAX_PATH] = { 0 };
-	WCHAR parentDir[MAX_PATH] = { 0 };
-
-	if (pFileNameInfo->Name.Length < MAX_PATH && pFileNameInfo->Name.Length >= 0)
+	status = FltGetFileNameInformation(pData, FLT_FILE_NAME_NORMALIZED | FLT_FILE_NAME_QUERY_DEFAULT, &pFileNameInfo);
+	if (NT_SUCCESS(status))
 	{
-		RtlCopyMemory(dir, pFileNameInfo->Name.Buffer, pFileNameInfo->Name.Length);
-		KdPrint(("dir : % ws \r\n", dir));
-
-		if (pFileNameInfo->ParentDir.Length < MAX_PATH && pFileNameInfo->ParentDir.Length >= 0)
+		status = FltParseFileNameInformation(pFileNameInfo);
+		if (NT_SUCCESS(status))
 		{
-			RtlCopyMemory(parentDir, pFileNameInfo->ParentDir.Buffer, pFileNameInfo->ParentDir.Length);
-			KdPrint(("parentDir : %ws \r\n", parentDir));
+			if (pFileNameInfo->Name.Length < MAX_PATH && pFileNameInfo->Name.Length >= 0)
+			{
+				RtlCopyMemory(dir, pFileNameInfo->Name.Buffer, pFileNameInfo->Name.Length);
+				KdPrint(("dir : % ws \r\n", dir));
+			}
+			else
+			{
+				KdPrint(("File name exceeds maximum Length!!\n"));
+			}
+
+			// Get parent dir
+			if (pFileNameInfo->ParentDir.Length < MAX_PATH && pFileNameInfo->ParentDir.Length >= 0)
+			{
+				RtlCopyMemory(parentDir, pFileNameInfo->ParentDir.Buffer, pFileNameInfo->ParentDir.Length);
+				KdPrint(("parentDir : %ws \r\n", parentDir));
+			}
+			else {
+				KdPrint(("Parent dir exceeds maximum Length!!\n"));
+			}
 		}
-		else {
-			KdPrint(("Parent dir exceeds maximum Length!!"));
+		else
+		{
+			KdPrint(("FltParseFileNameInformation Failed!!\r\n"));
 		}
 	}
 	else
 	{
-		KdPrint(("File name exceeds maximum Length!!"));
+		KdPrint(("MiniPreCreate Failed!!\r\n"));
 	}
 
-	FltReleaseFileNameInformation(pFileNameInfo);
 
-	return 1;
+	if (pFileNameInfo) {
+		FltReleaseFileNameInformation(pFileNameInfo);
+	}
 
-FAIL:
-	return 0;
+	return status;
 }
 
 
@@ -93,19 +70,14 @@ FLT_PREOP_CALLBACK_STATUS MiniPreCreate(
 	UNREFERENCED_PARAMETER(ppCompletionCallbacks);
 	UNREFERENCED_PARAMETER(pFltObjects);
 
-	if (GetAccessVerdict(pData) == 0) {
-		KdPrint(("Object Access denied!!"));
-		goto FAIL;
-	}
+	WCHAR parentDir[MAX_PATH] = { 0 };
 
-	KdPrint(("Object Access allowed!!"));
+	NTSTATUS status = GetParsedFileNameInfo(pData, parentDir);
+
+	KdPrint(("Object Access allowed!! for parent: %ws\n", parentDir));
 
 OK:
 	return FLT_PREOP_SUCCESS_NO_CALLBACK;
-
-FAIL:
-	pData->IoStatus.Status = STATUS_ACCESS_DENIED;
-	return FLT_PREOP_COMPLETE;
 }
 
 
@@ -117,19 +89,14 @@ FLT_PREOP_CALLBACK_STATUS MiniPreRead(PFLT_CALLBACK_DATA pData, PCFLT_RELATED_OB
 	UNREFERENCED_PARAMETER(ppCompletionCallbacks);
 	UNREFERENCED_PARAMETER(pFltObjects);
 
-	if (GetAccessVerdict(pData) == 0) {
-		KdPrint(("Object Access denied!!"));
-		goto FAIL;
-	}
+	WCHAR parentDir[MAX_PATH] = { 0 };
+
+	NTSTATUS status = GetParsedFileNameInfo(pData, parentDir);
 
 	KdPrint(("Object Access allowed!!"));
 
 OK:
 	return FLT_PREOP_SUCCESS_NO_CALLBACK;
-
-FAIL:
-	pData->IoStatus.Status = STATUS_ACCESS_DENIED;
-	return FLT_PREOP_COMPLETE;
 }
 
 
@@ -140,18 +107,13 @@ FLT_PREOP_CALLBACK_STATUS MiniPreWrite(PFLT_CALLBACK_DATA pData, PCFLT_RELATED_O
 
 	UNREFERENCED_PARAMETER(ppCompletionCallbacks);
 	UNREFERENCED_PARAMETER(pFltObjects);
-
-	if (GetAccessVerdict(pData) == 0) {
-		KdPrint(("Object Access denied!!"));
-		goto FAIL;
-	}
-
+// TODO : Implement
 	KdPrint(("Object Access allowed!!"));
 
 OK:
 	return FLT_PREOP_SUCCESS_NO_CALLBACK;
 
-FAIL:
-	pData->IoStatus.Status = STATUS_ACCESS_DENIED;
-	return FLT_PREOP_COMPLETE;
+//FAIL:
+//	pData->IoStatus.Status = STATUS_ACCESS_DENIED;
+//	return FLT_PREOP_COMPLETE;
 }

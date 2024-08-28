@@ -1,4 +1,4 @@
-#include "wflminifilter.h"
+#include "wfl.h"
 
 // Callbacks list for operation registration in the minifilter
 //

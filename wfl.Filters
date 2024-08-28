@@ -19,17 +19,17 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="WFLMinifilter.c">
+    <ClCompile Include="wfl.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="WFLMinifilter.rc">
+    <ResourceCompile Include="wfl.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <Inf Include="WFLMinifilter.inf">
+    <Inf Include="wfl.inf">
       <Filter>Driver Files</Filter>
     </Inf>
   </ItemGroup>

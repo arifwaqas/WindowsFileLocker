@@ -1,4 +1,4 @@
-#include "wflminifilter.h"
+#include "wfl.h"
 #include "port.h"
 
 PFLT_FILTER phFilter = NULL;

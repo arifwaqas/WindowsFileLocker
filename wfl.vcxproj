@@ -24,7 +24,7 @@
     <Configuration Condition="'$(Configuration)' == ''">Debug</Configuration>
     <Platform Condition="'$(Platform)' == ''">x64</Platform>
     <SampleGuid>{D469D3E0-FEAC-4BF9-90AF-C46E5F411DCA}</SampleGuid>
-    <ProjectName>WFLMinifilter</ProjectName>
+    <ProjectName>wfl</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -78,20 +78,20 @@
   <ItemGroup Label="WrappedTaskItems">
     <ClInclude Include="defines.h" />
     <ClInclude Include="port.h" />
-    <ClInclude Include="wflminifilter.h" />
+    <ClInclude Include="wfl.h" />
   </ItemGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <TargetName>wflminifilter</TargetName>
+    <TargetName>wfl</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
-    <TargetName>wflminifilter</TargetName>
+    <TargetName>wfl</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <TargetName>wflminifilter</TargetName>
+    <TargetName>wfl</TargetName>
     <Inf2CatUseLocalTime>true</Inf2CatUseLocalTime>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
-    <TargetName>wflminifilter</TargetName>
+    <TargetName>wfl</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -153,11 +153,11 @@
     <ClCompile Include="port.c" />
     <ClCompile Include="registrations.c" />
     <ClCompile Include="routines.c" />
-    <ClCompile Include="wflminifilter.c" />
-    <ResourceCompile Include="WFLMinifilter.rc" />
+    <ClCompile Include="wfl.c" />
+    <ResourceCompile Include="wfl.rc" />
   </ItemGroup>
   <ItemGroup>
-    <Inf Exclude="@(Inf)" Include="wflminifilter.inf" />
+    <Inf Exclude="@(Inf)" Include="wfl.inf" />
     <FilesToPackage Include="$(TargetPath)" Condition="'$(ConfigurationType)'=='Driver' or '$(ConfigurationType)'=='DynamicLibrary'" />
   </ItemGroup>
   <ItemGroup>
